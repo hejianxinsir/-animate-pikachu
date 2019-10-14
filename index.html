@@ -2,23 +2,39 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>重新画个皮卡丘</title>
-	<link rel="stylesheet" href="./default.css"></style>
+	<link rel="stylesheet" href="vendor/prism/prism.css">
+	<link rel="stylesheet" href="css/default.css"></style>
+	<style id="styleCode"></style>
 </head>
 <body>
-	<div class="wrapper">
-		<div class="nose"></div>
-		<div class="eyes eyeLeft"></div>
-		<div class="eyes eyeRight"></div>
-		<div class="eyebow leftBow"></div>
-		<div class="eyebow rightBow"></div>
-		<div class="face faceLeft"></div>
-		<div class="face faceRight"></div>
-		<div class="lip topLeft"></div>
-		<div class="lip topRight"></div>	
-		<div class="tongueWrapper">
-			<div class="tongue"></div>
+	<div class="codeWrapper">
+		<pre class="code"></pre>
+	</div>
+	<div class="wrapperPapa">
+		<div class="wrapper">
+			<div class="nose"></div>
+			<div class="eyes eyeLeft"></div>
+			<div class="eyes eyeRight"></div>
+			<div class="eyebow leftBow"></div>
+			<div class="eyebow rightBow"></div>
+			<div class="face faceLeft"></div>
+			<div class="face faceRight"></div>
+			<div class="lip topLeft"></div>
+			<div class="lip topRight"></div>	
+			<div class="tongueWrapper">
+				<div class="tongue"></div>
+			</div>
 		</div>
 	</div>
+	<div class="setSpeed">
+		<button data-speed="slow" class="active">slow</button>
+		<button data-speed="normal">normal</button>
+		<button data-speed="fast">fast</button>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="vendor/prism/prism.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>
