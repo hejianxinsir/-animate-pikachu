@@ -1,44 +1,5 @@
 !function(){
 	var css = `
-	*{
-		margin: 0; padding: 0;
-		box-sizing: border-box;
-	}
-	body{
-		background: #ffec00;
-		height: 100vh;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-	}
-	* > ::before{ box-sizing: border-box}
-	* > ::after{ box-sizing: border-box}
-	.wrapperPapa{
-		flex: 1;
-		height: 50%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-	.codeWrapper{
-		flex: 1;
-		height: 50%;
-		background: white;
-		overflow: hidden;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-	.codeWrapper > .code {
-		overflow: hidden;
-		height: 100%;
-		padding: 20px 30px;
-	}
-	.wrapper{
-		width: 100%;
-		height: 158px;
-		position: relative;
-	}
 	.nose{
 		position: absolute;
 		top: 23px;
