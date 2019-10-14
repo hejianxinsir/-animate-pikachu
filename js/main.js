@@ -166,24 +166,8 @@
 	}
 
 	`
-	var duration = 10
+	var duration = 100
 	writeCode('', css, ()=>{})
-	function writeCode(prefix,cssCode,fn){
-		var n = 0
-		var domCode = document.querySelector('.code')
-		var styleCode = document.querySelector('#styleCode')
-		var id = setInterval(function(){
-			n += 1
-			domCode.innerHTML = Prism.highlight(prefix + cssCode.slice(0,n), Prism.languages.css, 'css')
-			styleCode.innerHTML = prefix + cssCode.slice(0,n)
-			domCode.scrollTop = domCode.scrollHeight
-			if(n >= cssCode.length){
-				window.clearInterval(id)
-				fn && fn.call()
-			}
-		},duration)
-	}
-
 	$('.setSpeed').on('click','button',function(e){
 		var $button = $(e.currentTarget)
 		var speed = $button.attr('data-speed')
@@ -200,8 +184,27 @@
 			case 'fast':
 				duration = 10
 				break
-		}	
+		}
 	})
-		
+
+	function writeCode(prefix,cssCode,fn){
+		var n = 0
+		var domCode = document.querySelector('.code')
+		var styleCode = document.querySelector('#styleCode')
+
+		var id = setTimeout(function run(){
+			n += 1
+			domCode.innerHTML = Prism.highlight(prefix + cssCode.slice(0,n), Prism.languages.css, 'css')
+			styleCode.innerHTML = prefix + cssCode.slice(0,n)
+			domCode.scrollTop = domCode.scrollHeight
+			if(n < cssCode.length){
+				setTimeout(run, duration)
+			}else{
+				fn && fn.call
+			}
+		},duration)
+	}
+
+			
 }.call()
 
